@@ -1,0 +1,59 @@
+*{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.title{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+.title span{
+    margin-left: 10px;
+    color: red;
+}
+#state{
+    display: flex;
+    justify-content: center;
+    margin-top: 120px;
+}
+.grid{
+    margin-left: auto;
+    margin-right: auto;
+    width: 26%;
+    margin-top: 50px;
+}
+#grid{
+    width: 500px;
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.grid img{
+    padding: 10px;
+    display: flex;
+    transition: 0.5s ease;
+}
+.grid img:hover{
+    transform: scale(1.1);
+}
+h3{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: black;
+    font-size: 50px;
+}
+#result{
+    color: green;
+    margin-left: 10px;
+    font-size: 50px;
+}
+#wonImg{
+    height: 100px;
+    margin-bottom: 100px;
+}
