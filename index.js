@@ -52,6 +52,8 @@ cardArray.sort(()=>0.5-Math.random())
 
 const gridDisplay = document.querySelector('#grid')//variable for the div
 const resultDisplay= document.querySelector('#result')
+let wonImg=document.querySelector('#wonImg')
+let playAgain=document.querySelector('#playAgain')
 let stateDisplay= document.querySelector('#state')
 let cardChosen= [] 
 let cardChosenId= []
@@ -85,6 +87,7 @@ function checkMatch(){
     {
         stateDisplay.textContent='YOU FINALLY got a Match'
         stateDisplay.style.color='green'
+        resultDisplay.textContent++;
         cards[cardOneId].setAttribute('src','images/white.png')
         cards[cardTwoId].setAttribute('src','images/white.png')
         cards[cardOneId].removeEventListener('click',flipCard)
@@ -98,18 +101,21 @@ function checkMatch(){
         cards[cardTwoId].setAttribute('src','images/blank.png')
         stateDisplay.textContent='HA HA HA HA HA give it another try you DUMB'
         stateDisplay.style.color='red'
+        resultDisplay.textContent--;
     }
 
     cardChosen= []//reset the array
     cardChosenId= []
-    resultDisplay.textContent=cardsWon.length//score counter
-    //
+
     if(cardsWon.length === cardArray.length/2){
         stateDisplay.textContent="You FINALLY Did Something Right In You Life!!"
         stateDisplay.style.color='blue'
+        gridDisplay.parentNode.removeChild(gridDisplay)
+        wonImg.style.display='block';
     }
 
 }
+
 function flipCard(){
     console.log(cardArray)
     let cardId = this.getAttribute('data-id')//get the id of the cards
